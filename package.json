@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "predeploy": "ng build --base-href /HGM/",
+    "deploy": "ngh --dir=dist/hgm --branch=prod-build"
   },
   "private": true,
   "dependencies": {

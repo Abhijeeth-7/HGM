@@ -9,6 +9,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 export class GeneratedCodeComponent implements OnInit {
   generatedCode: string;
   timestamp: string;
+  isCodeCopied: boolean;
   constructor(private service: SharedService, private modalRef: BsModalRef) {}
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class GeneratedCodeComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
+    this.isCodeCopied = true;
   }
 
   closeModal() {

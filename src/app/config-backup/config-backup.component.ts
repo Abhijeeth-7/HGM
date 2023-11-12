@@ -10,6 +10,7 @@ export class ConfigBackupComponent implements OnInit {
   configurationData: any = '';
   timestamp: string;
   subscriptions: Subscription = new Subscription();
+  isCodeCopied: boolean;
 
   constructor(private service: SharedService) {
     this.configurationData =
@@ -39,6 +40,7 @@ export class ConfigBackupComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
+    this.isCodeCopied = true;
   }
 
   getBackUpString(gestureList, actionsList, appNamesList): string {

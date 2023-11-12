@@ -7,9 +7,12 @@
       >
     </div>
     <span>Press Esc to close</span>
-    <button class="btn btn-outline-light" (click)="copyToClipBoard(codeBlock)">
-      <i class="bi bi-clipboard"></i>
-      Click Here to Copy
+    <button class="btn btn-secondary" (click)="copyToClipBoard(codeBlock)">
+      <i
+        class="bi me-1"
+        [ngClass]="isCodeCopied ? 'bi-clipboard-check' : 'bi-clipboard'"
+      ></i>
+      {{ isCodeCopied ? "Copied!" : "Copy code" }}
     </button>
   </div>
   <div class="text-light">

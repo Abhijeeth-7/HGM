@@ -1,28 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/_variables.scss";
-
-@keyframes gradientAnimation {
-  @for $i from 0 through 100 {
-    #{percentage($i/100)} {
-      background: linear-gradient(
-        to bottom right,
-        $blue-900 #{$i + "%"},
-        $blue-800 #{($i + 30) + "%"},
-        $blue-900 #{($i + 60) + "%"}
-      );
-      // background: linear-gradient(
-      //   to bottom right,
-      //   #075169fc #{$i + "%"},
-      //   #26295f #{$i + 20 + "%"},
-      //   #610e33f0 #{$i + 40 + "%"}
-      // );
-    }
-  }
-}
+// Import Bootstrap source files
+@import "/node_modules/bootstrap/scss/functions";
+@import "/node_modules/bootstrap/scss/variables";
+@import "/node_modules/bootstrap/scss/mixins";
+$theme-colors: (
+  "primary": $blue-700,
+  "secondary": $gray-800,
+  "success": $green-700,
+  "info": $cyan-800,
+  "warning": $yellow-800,
+  "danger": $red-800,
+  "light": $white,
+  "dark": $dark,
+);
 
 .body {
-  // animation: gradientAnimation 5s ease-in-out infinite alternate;
   background-color: $dark;
   color: $light;
 }
@@ -32,12 +24,23 @@
   margin: 0 auto;
 }
 
-.btn {
-  padding-left: 1.25rem !important;
-  padding-right: 1.25rem !important;
+.text-hover-primary {
+  &:hover {
+    color: $yellow-400;
+  }
+}
+.text-hover-danger {
+  &:hover {
+    color: $red-400;
+  }
 }
 
-.multiselect-dropdown {
+.btn {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.btn .multiselect-dropdown {
   & > .dropdown-list {
     max-height: 80vh;
     overflow-y: scroll;
@@ -107,13 +110,15 @@
   }
 }
 
+.bi-pencil,
+.bi-trash-fill,
 .bi-x-lg,
 .bi-x {
   cursor: pointer;
   transform: scale 300ms ease-out;
 
   &:hover {
-    transform: scale(1.15);
+    transform: scale(1.2);
     transform-origin: center;
   }
 }

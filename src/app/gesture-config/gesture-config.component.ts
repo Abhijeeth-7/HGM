@@ -152,7 +152,7 @@ export class GestureConfigComponent implements OnInit {
 
   editGestureMapping(gesture: any, index: number) {
     const config: ModalOptions = {
-      class: 'modal-lg modal-right',
+      class: 'modal-lg',
       initialState: {
         gestureMapping: gesture,
         appNamesList: this.appNamesList,

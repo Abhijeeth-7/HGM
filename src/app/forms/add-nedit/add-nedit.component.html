@@ -335,7 +335,8 @@
   </div>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-outline-primary my-2" (click)="submitForm()">
-    {{ gestureId ? "Edit" : "Add" }} Gesture Configuration
+  <button class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+  <button class="btn btn-primary ms-2" (click)="submitForm()">
+    {{ gestureId ? "Edit" : "Add" }} Gesture Mapping
   </button>
 </div>

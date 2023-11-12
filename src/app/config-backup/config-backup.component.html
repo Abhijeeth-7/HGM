@@ -1,10 +1,13 @@
-<div class="my-4 border rounded text-light">
+<div class="my-4 text-light shadow-lg">
   <div class="d-flex justify-content-between align-items-baseline p-3">
     <p>Gesture configuration Back up</p>
     <p *ngIf="timestamp">Generated at {{ timestamp }}</p>
-    <button class="btn btn-outline-light" (click)="copyToClipBoard(configData)">
-      <i class="bi bi-clipboard"></i>
-      Click Here to Copy
+    <button class="btn btn-secondary" (click)="copyToClipBoard(configData)">
+      <i
+        class="bi me-1"
+        [ngClass]="isCodeCopied ? 'bi-clipboard-check' : 'bi-clipboard'"
+      ></i>
+      {{ isCodeCopied ? "Copied!" : "Copy config" }}
     </button>
   </div>
   <pre class="p-4 m-0 codeBlock" #configData>
