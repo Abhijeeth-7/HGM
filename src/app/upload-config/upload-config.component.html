@@ -1,0 +1,17 @@
+<div class="modal-body">
+  <div class="d-flex justify-content-between align-items-baseline">
+    <h6>Upload Gesture Configuration</h6>
+    <i class="bi bi-x-lg" (click)="closeModal()"></i>
+  </div>
+  <textarea
+    class="form-control mt-4"
+    [rows]="4"
+    placeholder="Paste the content in your configuration file here."
+    [(ngModel)]="uploadedText"
+  ></textarea>
+  <div class="mt-4 text-center">
+    <button class="btn btn-primary" (click)="uploadConfig()">
+      Upload Configuration
+    </button>
+  </div>
+</div>

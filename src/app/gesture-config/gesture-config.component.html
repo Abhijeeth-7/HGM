@@ -1,0 +1,81 @@
+<div class="d-flex align-items-center py-2">
+  <input
+    class="form-control search-bar"
+    type="search"
+    placeholder="Search"
+    [(ngModel)]="searchQuery"
+    (keyup)="getMatchingGestures()"
+  />
+
+  <div class="ms-auto">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="openUploadConfigModal()"
+    >
+      Upload Existing Configuration
+    </button>
+
+    <button class="btn btn-primary mx-3" (click)="openAddGestureModal()">
+      Add Gesture Mapping
+    </button>
+
+    <button class="btn btn-primary" (click)="getGeneraredCode()">
+      Generate Code
+    </button>
+  </div>
+</div>
+
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th class="col-1">Mode</th>
+      <th class="col-3">Gesture Name</th>
+      <th class="col-3">Action</th>
+      <th class="col-1">Swipe</th>
+      <th class="col-3">Application</th>
+      <th class="col-1">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let gesture of filteredGestureList; index as id">
+      <td class="col-1">{{ gesture.mode }}</td>
+      <td class="col-3">{{ gesture.gestureName }}</td>
+      <td class="col-4">{{ gesture.action }}</td>
+      <td class="col-1">{{ gesture.direction }}</td>
+      <td class="col-2">{{ gesture.appName }}</td>
+      <td class="col-2">
+        <div class="d-flex align-items-center w-100 gap-2">
+          <i class="bi bi-pencil" (click)="editGestureMapping(gesture, id)"></i>
+          <i
+            class="bi bi-trash-fill"
+            (click)="openDeleteModal(deleteModal, id)"
+          ></i>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #deleteModal>
+  <div class="modal-header">
+    <h5>Delete {{ selectedGesture?.gestureName }}</h5>
+    <span class="bi bi-x-lg" (click)="closeDeleteModal()"></span>
+  </div>
+  <div class="modal-body">
+    <p>
+      This action is irreversable, Are you sure you want to delete this gesture?
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button
+      class="btn btn-sm btn-secondary mr-20px"
+      (click)="closeDeleteModal()"
+    >
+      Cancel
+    </button>
+    <button class="btn btn-sm btn-danger" (click)="deleteGesture()">
+      Delete
+    </button>
+  </div>
+</ng-template>

@@ -1,0 +1,20 @@
+<div>
+  <div class="d-flex justify-content-between align-items-center m-3">
+    <div>
+      <p class="mb-0">Generated Python Code</p>
+      <span *ngIf="timestamp">
+        <small>At {{ timestamp }}</small></span
+      >
+    </div>
+    <span>Press Esc to close</span>
+    <button class="btn btn-outline-light" (click)="copyToClipBoard(codeBlock)">
+      <i class="bi bi-clipboard"></i>
+      Click Here to Copy
+    </button>
+  </div>
+  <div class="text-light">
+    <pre class="p-4 m-0 codeBlock" #codeBlock>
+      {{ generatedCode }}
+    </pre>
+  </div>
+</div>

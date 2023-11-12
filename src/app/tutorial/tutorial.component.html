@@ -1,0 +1,186 @@
+<div class="d-flex my-5 px-4">
+  <div class="w-25">
+    <ul class="text-white ps-0">
+      <li>
+        <a
+          (click)="scrollToElement('one-time-setup')"
+          class="text-link text-white"
+        >
+          One Time Setup
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="scrollToElement('generated-code')"
+          class="text-link text-white"
+          >How to use the generated code</a
+        >
+      </li>
+      <li>
+        <a
+          (click)="scrollToElement('configured-gestures')"
+          class="text-link text-white"
+          >How to use configured gestures</a
+        >
+      </li>
+      <li>
+        <a
+          (click)="scrollToElement('mouse-operations')"
+          class="text-link text-white"
+          >How to operate mouse</a
+        >
+      </li>
+      <li>
+        <a (click)="scrollToElement('tips')" class="text-link text-white"
+          >Tips</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="w-75 ms-4">
+    <div class="text-white">
+      <section id="one-time-setup">
+        <h3>One Time Setup</h3>
+        <p>
+          Please complete the <strong>one time setup</strong> inorder to execute
+          genarated code on your computer
+        </p>
+        <div class="ms-2">
+          <h5>Install python (version 3.8.10)</h5>
+          <a class="ms-4" target="_blank" href="https://youtu.be/djjUDMsAUmY">
+            Click here for tutorial on how to install python
+          </a>
+        </div>
+        <div class="ms-2 mt-2">
+          <h5>Install python packages</h5>
+          <ol>
+            <li>Open commmand prompt</li>
+            <li>
+              <div>
+                <p>Type the following commands one after the other</p>
+                <p><b>pip install mediapipe</b></p>
+                <p><b>pip install WMI</b></p>
+                <p><b>pip install autopy</b></p>
+                <p><b>pip install PyAutoGUI</b></p>
+                <p><b>pip install numpy</b></p>
+                <p><b>pip install opencv-python</b></p>
+              </div>
+            </li>
+            <a href="https://youtu.be/k0S8sr9RKH8" target="_blank"
+              >Click here to Watch a video on how to perform the above steps</a
+            >
+          </ol>
+        </div>
+      </section>
+      <section class="mt-4" id="generated-code" #gc>
+        <h3>How to use the generated code</h3>
+        <ol class="mt-2">
+          <li>
+            <p>Click "Generate Code" button in this site and Copy the code</p>
+          </li>
+          <li><p>Open notepad and paste the copied code</p></li>
+          <li>
+            <p>
+              Save the notepad file by clicking save as option instead of save
+            </p>
+          </li>
+          <li>
+            <p>while saving the file add ".py" at the end of your file name</p>
+            <p class="ms-4">
+              Ex: If your naming the file as "testCode1" then add it as
+              "testCode1.py"
+            </p>
+          </li>
+          <li><p>Set "Save as" to "All files" and Click save</p></li>
+          <li>Run the code, by double clicking on the saved file</li>
+        </ol>
+      </section>
+      <section class="mt-4" id="configured-gestures">
+        <h3>How to use the configured hand gestures</h3>
+        <p>
+          The gestures are isolated in <strong>5 different modes</strong> of
+          operations
+        </p>
+        <div class="ms-4">
+          <h5>Modes</h5>
+          <ul>
+            <li>
+              <p>
+                <b>Mode 1 :</b> All mouse functionalities, use mode 1 when you
+                want to control the mouse<br />
+              </p>
+            </li>
+            <li>
+              <p><b>Mode 2 :</b> Contains all Swipe Gestures<br /></p>
+            </li>
+            <li>
+              <p><b>Mode 3 :</b> Contains all Static Gestures<br /></p>
+            </li>
+            <li>
+              <p><b>Mode 4 :</b> Contains all Action Gestures<br /></p>
+            </li>
+            <li>
+              <p>
+                <b>Mode 5 :</b> Can contain action gestures, swipe gestures or
+                both depending on your configuration.
+              </p>
+            </li>
+          </ul>
+          <h5>How to Switch Modes</h5>
+          <p class="ms-4">
+            You can switch between the modes by brining both the hands into
+            webcam view port and specifying the mode using your fingers on the
+            left hand as shown
+          </p>
+        </div>
+      </section>
+      <section class="mt-4" id="mouse-operations">
+        <h3>How to Operate the mouse in mode 1</h3>
+        <ol>
+          <li>
+            To operate mouse change your hand state to the following state ->
+            Open Thumb, Index, and Little fingers and close remaining fingers
+          </li>
+          <li>
+            To perform "left click" toggle your "index finger" I.e, close and
+            open your index finger once
+          </li>
+          <li>
+            To perform "right click" toggle your "little finger" I.e, close and
+            open your little finger once
+          </li>
+          <li>To avoid detection or moving mouse pointer make a Fist!</li>
+        </ol>
+      </section>
+
+      <section class="mt-4" id="tips">
+        <h3>Tips</h3>
+        <ul>
+          <li>
+            <p>
+              To <strong>Avoid detection</strong> at any point of time, make a
+              <strong>Fist!</strong>
+            </p>
+            <p class="ms-4">
+              when all fingers are closed, this state of hand is being used to
+              avoid detection at any point of time. So You can avoid triggering
+              any unintended actions by making a fist
+            </p>
+          </li>
+          <li>
+            <p>
+              The gestures in <strong>Mode 1 and 5</strong> can be used on
+              <b>any application</b>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The gestures in <b>Mode 2, 3, and 4</b> are
+              <b>application specific.</b>
+            </p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>

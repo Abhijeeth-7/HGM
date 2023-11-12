@@ -1,1 +1,147 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+
+@keyframes gradientAnimation {
+  @for $i from 0 through 100 {
+    #{percentage($i/100)} {
+      background: linear-gradient(
+        to bottom right,
+        $blue-900 #{$i + "%"},
+        $blue-800 #{($i + 30) + "%"},
+        $blue-900 #{($i + 60) + "%"}
+      );
+      // background: linear-gradient(
+      //   to bottom right,
+      //   #075169fc #{$i + "%"},
+      //   #26295f #{$i + 20 + "%"},
+      //   #610e33f0 #{$i + 40 + "%"}
+      // );
+    }
+  }
+}
+
+.body {
+  // animation: gradientAnimation 5s ease-in-out infinite alternate;
+  background-color: $dark;
+  color: $light;
+}
+
+.container-fluid {
+  width: 90% !important;
+  margin: 0 auto;
+}
+
+.btn {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+.multiselect-dropdown {
+  & > .dropdown-list {
+    max-height: 80vh;
+    overflow-y: scroll;
+  }
+}
+.codeBlock {
+  min-height: 10px;
+  max-height: 80vh;
+  overflow-y: scroll;
+  color: white;
+  background-color: #899a9e73;
+}
+.table-container {
+  width: 100%;
+  height: 100vh !important;
+  overflow-y: scroll;
+}
+
+.search-bar {
+  border-color: transparent;
+  border-radius: 0.25rem;
+  width: 30% !important;
+}
+
+//modals
+.modal {
+  .modal-content {
+    background-color: $dark;
+    color: $light;
+
+    & .modal-header {
+      border: unset !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    & .modal-footer {
+      border-top: 1px solid $gray-700 !important;
+    }
+  }
+
+  .modal-lg {
+    max-width: 80% !important;
+
+    @media (max-width: 500px) {
+      max-width: 100% !important;
+      margin: 0 !important;
+    }
+  }
+
+  .modal-sm {
+    max-width: 40% !important;
+
+    @media (max-width: 500px) {
+      max-width: 100% !important;
+      margin: 0 !important;
+    }
+  }
+
+  .modal-center {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .modal-right {
+    margin: 0px !important;
+    margin-left: auto !important;
+  }
+}
+
+.bi-x-lg,
+.bi-x {
+  cursor: pointer;
+  transform: scale 300ms ease-out;
+
+  &:hover {
+    transform: scale(1.15);
+    transform-origin: center;
+  }
+}
+
+//scrollbar
+/* Firefox */
+* {
+  scrollbar-width: 5px;
+  scrollbar-color: #585858 #dfe9eb;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+  width: 6px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track:hover,
+*::-webkit-scrollbar-track:active {
+  background-color: #a3a3a3;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #3b3b3b;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
