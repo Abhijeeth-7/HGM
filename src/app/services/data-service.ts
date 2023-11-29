@@ -78,11 +78,11 @@ export class DataService {
       title: `MOUSE Left-Click`,
     },
     {
-      action: `scroll(150)`,
+      action: `scroll(100)`,
       title: `MOUSE Scroll Up`,
     },
     {
-      action: `scroll(-150)`,
+      action: `scroll(-100)`,
       title: `MOUSE Scroll Down`,
     },
     {
