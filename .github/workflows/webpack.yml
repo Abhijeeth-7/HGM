@@ -24,6 +24,6 @@ jobs:
 
     - name: Build
       run: |
-        yes | npm install
-        yes | npx webpack
-        yes | ng build
+        echo 'yes' | npm install
+        echo 'yes' | npx webpack
+        echo 'yes' | ng build
